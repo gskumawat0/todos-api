@@ -12,6 +12,10 @@ app.get("/", function (req, res) {
   res.send({ message: "hi from express" });
 });
 
+app.get("/health", function (req, res) {
+  res.sendStatus(200).json({ message: "ok" });
+});
+
 app.use("/api/todos", todoroutes);
 
 module.exports = app;
