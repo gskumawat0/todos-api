@@ -1,7 +1,7 @@
-var mongoose= require("mongoose");
+var mongoose = require("mongoose");
 mongoose.set("debug", true);
 
-mongoose.connect("mongodb://localhost/todo_api");
+mongoose.connect(process.env.MONGO_URI);
 mongoose.Promise = Promise;
 
 module.exports.Todo = require("./todo.js");
